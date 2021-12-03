@@ -20,6 +20,7 @@ for i in range(len(gamma_rate)):
 print("part 1: ",int(gamma_rate,2)*int(epsilon_rate,2))
 nums = lines
 pos = 0
+print(lines)
 while len(nums)>1:
     line = []
     vip_nums = []
@@ -37,18 +38,11 @@ while len(nums)>1:
         most_used = "1"
     elif zero>one:
         most_used ="0"
-    if len(nums)==2 and most_used == "0":
-        if nums[0][pos] == 1:
-            nums = nums[0]
-        else:
-            nums = nums[1]
-        break
     for item in nums:
         if item[pos] == most_used:
             vip_nums.append(item)
     nums = vip_nums
     pos+=1
-print(nums)
 nums2 = lines
 pos2 = 0
 while len(nums2)>1:
@@ -68,18 +62,15 @@ while len(nums2)>1:
         less_used ="0"
     elif one <zero:
         less_used = "1"
-    
-    if len(nums2)==2 and less_used == "0":
-        if nums2[0][pos2] == 1:
-            nums2 = nums2[0]
-        else:
-            nums2 = nums2[1]
-        break
     for item in nums2:
         if item[pos2] == less_used:
             vip_nums.append(item)
     nums2 = vip_nums
     pos2+=1
-print(nums)   
-print(nums2)
-print("part 2: ", int(nums[0],2)*int(nums2,2))
+if len(nums)==1:
+    nums = str(nums[0])
+if len(nums2)==1:
+    nums2 = str(nums2[0])
+
+
+print("part 2: ", int(nums,2)*int(nums2,2))
