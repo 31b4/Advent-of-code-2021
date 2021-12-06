@@ -1,6 +1,3 @@
-from os import spawnl
-
-
 with open('input.txt') as f:
     lines = f.readlines()
 horizontal =0
@@ -14,7 +11,7 @@ for line in lines:
     elif word[0] == "up":
         depth-=int(word[1])
 
-print(horizontal*depth)
+print("part 1:",horizontal*depth)
 horizontal = 0
 depth=0
 aim = 0
@@ -27,5 +24,4 @@ for line in lines:
         aim +=int(word[1])
     elif word[0] == "up":
         aim -=int(word[1])
-print(horizontal*depth)
-
+print("part 2:",horizontal*depth)
