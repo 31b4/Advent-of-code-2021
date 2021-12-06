@@ -7,8 +7,6 @@ horizontal =0
 depth = 0
 for line in lines:
     word = line.split(' ')
-
-
     if word[0]== "forward":
         horizontal+=int(word[1])
     elif word[0] == "down":
