@@ -20,7 +20,6 @@ for i in range(len(gamma_rate)):
 print("part 1: ",int(gamma_rate,2)*int(epsilon_rate,2))
 nums = lines
 pos = 0
-print(lines)
 while len(nums)>1:
     line = []
     vip_nums = []
