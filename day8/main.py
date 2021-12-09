@@ -64,14 +64,7 @@ def Part2(lines):
                             zero = True
                 if not nine and not zero:
                     nums[6] = item
-    #     print(nums)
-    #     num = 0
-    #     for find in second.split(' '):
-    #         for i in range(10):
-    #             if nums[i] == find:
-    #                 num = (num *10) +i
-    #     summ += num
-    # return summ
+
 
 
 
