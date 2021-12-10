@@ -1,9 +1,11 @@
+import numpy as np
 def Read_all():
     with open("input.txt") as f:
         return f.read().split('\n')
 
 def Part1(lines):
     summ = 0
+    lows = []
     for i in range(len(lines)):
         for j in range(len(lines[i])):
             notSafe =  False
@@ -25,11 +27,22 @@ def Part1(lines):
             if not notSafe:
                 print(current)
                 summ += 1 + int(current)
-    return summ
-def Part2(lines):
-    pass
-
+                lows.append((i,j))
+    return lows, summ
+def Part2(lines,lows):
+    current_id = 0
+    for row,col in lows: #Depth-first search
+        current = [(row,col)]
+        visited = set()
+        while len(current) > 0:
+            row, col = current.pop()
+            if (row,col) in visited:
+                continue
+            visited.add((row,col))
+            ids[row,col]= current_id
 
 lines = Read_all()
-print("part 1: ", Part1(lines))
-print("part 2: ", Part2(lines))
+lows, ans1 = Part1(lines)
+print(lows)
+print("part 1: ", ans1)
+print("part 2: ", Part2(lines,lows))
